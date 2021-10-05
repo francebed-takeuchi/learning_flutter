@@ -38,6 +38,7 @@ class _MyHomePageState extends State<MyHomePage> {
   /// _counterの値を増加させるための関数
   void _incrementCounter() {
     /// setState((){})の中にStateを変更する処理を記述することでStateの更新を行う
+    /// setStateをしないと画面が更新されません
     setState(() {
       _counter++;
     });
