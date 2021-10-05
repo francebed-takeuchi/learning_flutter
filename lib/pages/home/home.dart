@@ -61,15 +61,29 @@ class _MyHomePageState extends State<MyHomePage> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceAround,
-              children: const [
-                CircleAvatar(backgroundColor: Colors.blue), // 青い丸
-                CircleAvatar(backgroundColor: Colors.red), // 赤い丸
-                Text('Rowを使って横並びに配置'),
-              ],
+            Container(
+              color: Colors.grey,
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                children: const [
+                  CircleAvatar(backgroundColor: Colors.blue), // 青い丸
+                  CircleAvatar(backgroundColor: Colors.red), // 赤い丸
+                  Text('Rowを使って横並びに配置'),
+                ],
+              ),
             ),
             const SizedBox(height: 50), // スペースを入れたい時や大きさを制御するために使います
+            Container(
+              color: Colors.grey,
+              child: Column(
+                children: const [
+                  CircleAvatar(backgroundColor: Colors.blue), // 青い丸
+                  CircleAvatar(backgroundColor: Colors.red), // 赤い丸
+                  Text('Columnを使って縦並びに配置'),
+                ],
+              ),
+            ),
+            const SizedBox(height: 50),
             const Text(
               '右下のボタンを押すとカウンターが増加します。',
             ),
@@ -87,9 +101,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 /// ボタンを押すとSecondPage()に画面遷移する
                 Navigator.of(context).push<void>(
                   MaterialPageRoute(
-                    builder: (context) {
-                      return const TodoListPage();
-                    },
+                    builder: (context) => const TodoListPage(),
                   ),
                 );
               },
